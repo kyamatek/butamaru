@@ -1,4 +1,4 @@
-from PIL import Image
+#from PIL import Image
 
 #pathにimgを出力
 def exporting(img, path):
