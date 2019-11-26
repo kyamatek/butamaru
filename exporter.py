@@ -1,5 +1,6 @@
 from PIL import Image
 
-def export(img):
+#pathにimgを出力
+def exporting(img, path):
     #imgをもとに画像ファイルを出力
-    Image.save(img)
+    img.save(path)
