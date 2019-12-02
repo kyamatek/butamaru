@@ -7,8 +7,8 @@ def red_max(img):
     width, height = rgb_img.size
     new_img = Image.new('RGB',(width,height))
 
-    for x in range(height):
-        for y in range(width):
+    for x in range(width):
+        for y in range(height):
             #ピクセルを取得
             r,g,b = rgb_img.getpixel((x,y))
 
@@ -28,8 +28,8 @@ def rb_change(img):
     #同じサイズのRGB画像の定義
     new_img = Image.new('RGB',(width,height))
 
-    for x in range(height):
-        for y in range(width):
+    for x in range(width):
+        for y in range(height):
             #ピクセルを取得
             r,g,b = rgb_img.getpixel((x,y))
             #rとbを入れ替えてpixelをセット

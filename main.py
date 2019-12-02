@@ -2,7 +2,16 @@
 import importer
 import processor
 import exporter
+import sys
+import argparse
 
-img=importer.importing("./pig.png")
-new_img=processor.rb_change(img)
-exporter.exporting(new_img,'./output/testpig.png')
+parser = argparse.ArgumentParser(description = '')
+
+parser.add_argument('-f', default = './pig.png') #ファイルパス
+parser.add_argument('-m', default = 0) #モード
+
+args = parser.parse_args()
+
+img = importer.importing(args.f)
+new_img = processor.red_max(img)
+exporter.exporting(new_img,'./output/output.png')
