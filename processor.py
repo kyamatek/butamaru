@@ -2,6 +2,13 @@
 from PIL import Image
 
 #RGBのRを最大にする
+def select(img,number):
+    num=int(number)%2
+    if num==0:#引数が偶数のとき
+        return red_max(img)
+    else:
+        return rb_change(img)
+
 def red_max(img):
     rgb_img = img.convert('RGB')
     width, height = rgb_img.size
@@ -17,7 +24,7 @@ def red_max(img):
 
             #pixelのセット
             new_img.putpixel((x,y),(r,g,b,0))
-
+    print("Rが〜でっかくなっちゃった！")
     return new_img
 
 def rb_change(img):
@@ -34,5 +41,5 @@ def rb_change(img):
             r,g,b = rgb_img.getpixel((x,y))
             #rとbを入れ替えてpixelをセット
             new_img.putpixel((x,y),(g,r,b,0))
-
+    print("RとB「俺たち、、入れ替わってる？！」")
     return new_img
