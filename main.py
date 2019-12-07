@@ -14,5 +14,9 @@ args = parser.parse_args()
 
 
 img = importer.importing(args.f)
-new_img = processor.make_new_img(img, processor.red_max)
+if args.m==0:
+    new_img = processor.make_new_img(img, processor.red_max)
+else:
+    new_img = processor.make_new_img(img, processor.rb_change)
+    
 exporter.exporting(new_img,'./output/output.png')
